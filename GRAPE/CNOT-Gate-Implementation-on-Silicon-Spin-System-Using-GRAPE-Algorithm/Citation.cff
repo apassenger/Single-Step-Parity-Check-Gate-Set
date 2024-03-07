@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Üstün"
+  given-names: "Gözde"
+- family-names: "Morello"
+  given-names: "Andrea"
+- family-names: "Devitt"
+  given-names: "Simon" 
+- family-names: "Pitchford"  
+  given-names: " Alexander"
+title: "CNOT Gate Implementation on Silicon Spin System Using GRAPE Algorithm"
+version: 1.0.0
+date-released: 2023-04-14
+url: "https://github.com/apassenger/CNOT_gate_implementation_with_Grape"
+
