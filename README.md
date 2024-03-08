@@ -1,3 +1,4 @@
+https://zenodo.org/doi/10.5281/zenodo.10795552
 This folder contains all the codes and results written for the Single-Step Parity Check Gate Set paper. 
 If you use any of the code, please cite the software and the paper:
 
