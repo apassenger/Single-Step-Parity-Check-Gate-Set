@@ -1,0 +1,31 @@
+In this folder, we gave an example for using modulated control hamiltonian in the GRAPE algorithm.
+The code has 4 microseconds gate evolution time for the XX gate. The time resolution is 10 picoseconds (this corresponds to 400000 number of time slots).
+
+
+The output files include the results of the code, as well as the simulated output fidelities 
+for the implemented desired unitary (XX gate) by the single pulse, which is found by the algorithm
+
+You can explore the code by changing
+- number of time slots: 
+This is a crucial parameter of the algorithm; we need to choose fine enough time slots. 
+A very high or very low number of time slots will not allow the algorithm to work.
+
+Regarding the pulse type, as defined in the code:
+
+    A ZERO pulse will give a smoother pulse.
+    A SINE type pulse is better for one- and two-qubit gates if we have a good prediction for the possible pulse time.
+    An RND type pulse is good for more sophisticated pulse and exploring the space widely. However, we need to carefully define the experimental
+    
+parameters, such as the minimum and maximum amplitude, because the RND pulse can be really wild.
+
+Regarding experimental parameters, these include offset, minimum and maximum control amplitude, frequencies of the system, driving off and on resonance, 
+phase option, and so on. All of these things can change and yield different results.
+
+With this version of the code, instead of using two controls, we choose the direction in which we want to modulate the control Hamiltonian 
+with a proper radial frequency. This frequency can be defined as the energy differences between the eigenstates of the system 
+if we are driving in resonance. After specifying the frequency that we want to drive the system, we modulate the control 
+Hamiltonian with a cosine (or sine) function for each time slot and run the algorithm for these control Hamiltonians. 
+For modulated GRAPE, we take into account the cosine term and modulate the control Hamiltonian for each time slot with an appropriate radial frequency. 
+In this method, we only use the control Hamiltonian for either the x or y direction, not both.
+The important point is that the GRAPE algorithm receives a list of control Hamiltonians as a parameter, 
+and since we are modulating for each time slot, the control is now a list of lists.
