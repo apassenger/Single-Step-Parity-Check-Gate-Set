@@ -23,6 +23,21 @@ For instance, if we are implementing a CNOT gate between the electron and the do
 down state as well, so that they cannot interfere with each other. However, this method goes against the universality of computation, 
 where we should be able to implement gates perfectly and independently of the states of the system.
 
+This folder contains CNOT gates created with different durations (1, 10, 100, and 1000 microseconds) and the outputs.
+We utilized the GRAPE algorithm in two distinct ways, namely modulated and non-modulated GRAPE.
+
+  - For non-modulated GRAPE, instead of taking into account the cosine(sine) term in the control Hamiltonian, 
+  our list of controls are in both x and y direction with the proper coefficients 
+  i.e., ```H_c = [-gamma_E*tensor(px, p0, p0)- gamma_n*tensor(p0, px, p0)- gamma_n*tensor(p0, p0, px),
+       -gamma_E*tensor(py, p0, p0)- gamma_n*tensor(p0, py, p0)- gamma_n*tensor(p0, p0, py)] ```
+  - For modulated GRAPE, we take into account the cosine term and modulate the control Hamiltonian for each time slot 
+  with an appropriate radial frequency. In this method, we only use the control Hamiltonian for either the x or y direction, not both. 
+  The important point is that the GRAPE algorithm receives a list of control Hamiltonians as a parameter, 
+  and since we are modulating for each time slot, the control is now a list of lists.
+  
+  
+The algorithm was executed for different frequencies in the system, while keeping the min/max control amplitudes constant throughout the execution. 
+The minimum number of time slots is 10000, and the maximum number of time slots is 1000000. 
 
 If you use the code, please cite the software and the paper.
 For paper:
