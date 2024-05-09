@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Üstün"
+  given-names: "Gözde"
+  orcid: "https://orcid.org/0009-0004-7952-636X"
+- family-names: "Morello"
+  given-names: "Andrea"
+  orcid: "https://orcid.org/0000-0001-7445-699X"
+- family-names: "Devitt"
+  given-names: "Simon"
+  orcid: "https://orcid.org/0000-0002-5901-1391"  
+title: "Single-Step-Parity-Check-Gate-Set"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2024-05-08
+url: "https://github.com/apassenger/Single-Step-Parity-Check-Gate-Set"
